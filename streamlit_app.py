@@ -1,6 +1,6 @@
 # Import python packages
 import streamlit as st
-from snowflake.snowpark.context import get_active_session
+#from snowflake.snowpark.context import get_active_session
 
 helpful_links = [
     "https://docs.streamlit.io",
@@ -18,8 +18,9 @@ st.write(
 from snowflake.snowpark.functions import col
 
 # Get the current credentials
-session = get_active_session()
-
+#session = get_active_session()
+cnx = st.connection("snowflake")
+session = cnx.session()
 name = st.text_input("Your name :","",20)
 #st.write ("Entered name :"+name)
 #option = st.selectbox(

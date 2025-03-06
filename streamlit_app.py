@@ -14,7 +14,6 @@ st.title(" :cup_with_straw: My parents new Healty Dinner :cup_with_straw:")
 st.write(
     f""" Choose the fruits you want in your Smoothie! """
 )
-
 from snowflake.snowpark.functions import col
 
 # Get the current credentials
@@ -49,10 +48,7 @@ if ingredients_list:
     if time_to_submit:
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered!'+ name, icon="✅")
-        st.stop
 
-
-    
-
-
-
+import requests
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)

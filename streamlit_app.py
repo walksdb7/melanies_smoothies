@@ -18,8 +18,8 @@ from snowflake.snowpark.functions import col
 
 # Get the current credentials
 #session = get_active_session()
-cnx = st.connection("snowflake")
-session = cnx.session()
+#cnx = st.connection("snowflake")
+#session = cnx.session()
 name = st.text_input("Your name :","",20)
 #st.write ("Entered name :"+name)
 #option = st.selectbox(
